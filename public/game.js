@@ -23,8 +23,12 @@ Game.prototype = {
     this.game.snakes = [];
 
     // create player
-    var snake = new Snake(this.game, 'circle', 0, 0)
+    var snake = new PlayerSnake(this.game, 'circle', 0, 0)
     this.game.camera.follow(snake.head)
+
+    // create bots
+    new BotSnake(this.game, 'circle', -200, 0)
+    new BotSnake(this.game, 'circle', 200, 0)
   },
   /**
    * Main Update loop
